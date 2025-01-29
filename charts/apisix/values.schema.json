@@ -19,6 +19,30 @@
       "minItems": 0,
       "uniqueItems": true
     },
+    "proxy_cache": {
+      "description": "APISIX proxy_cache settings",
+      "type": "object",
+      "minItems": 0,
+      "properties": {
+        "zones": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "memory_size": {
+                "type": "string",
+                "minLength": 2
+              }
+            },
+            "required": ["name", "memory_size"]
+          }
+        }
+      }
+    },
     "customPlugins": {
       "description": "customPlugins allows you to mount your own HTTP plugins",
       "type": "object",
